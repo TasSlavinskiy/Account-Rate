@@ -1,0 +1,31 @@
+* {
+  	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: sans-serif;
+}
+.wrap {
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	padding: 25px;
+	box-sizing: border-box;
+}
+.container {
+	width: 80%;
+	padding: 20px;
+	line-height: 2.5;
+}
+h3 {
+	letter-spacing: -1px;
+}
+input {
+	font-size: 14px;
+    	padding: 5px 8px;
+	margin-top: 10px;
+}
+input[type="number"] {
+	width: 100px;
+}
