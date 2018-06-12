@@ -1,5 +1,5 @@
 
-Feature('SignIn');
+Feature('Account Remote');
 var assert = require('assert');
 // let filters = new DataTable(['Country', 'Service/Segment', 'Product', 'Brand', 'Industry Served']); //
 // filters.add(['Albania', '', '', '', '']); // adding records to a table
@@ -11,13 +11,34 @@ var assert = require('assert');
 // var arr = ['Country', 'Service/Segment', 'Product', 'Brand', 'Industry Served'];
 
 Scenario('test something', async (I) => {
+	
+	
 
-I.amOnPage('/');
-//I.fillField('Электронный адрес или номер телефона', 'taras.slavinskiy@gmail.com');
-//I.fillField('Пароль', '48791ndIGo654412');
-//I.click('Вход');
-//var a = await I.grabTextFrom('._1vp5');
-//assert.equal(a, 'Тарас');
-
-//pause();
+		session('rate3%', () => {
+			I.amOnPage('/');
+				I.fillField('#nameadd', 'Taras');
+				I.fillField('#sumadd', '50');
+				I.click('Отправить');
+				I.see('Taras', '#name');
+				I.see('50', '#sum');
+				I.see('3%', '#rate');
+		});
+		session('rate5%', () => {
+			I.amOnPage('/');
+				I.fillField('#nameadd', 'Taras');
+				I.fillField('#sumadd', '550');
+				I.click('Отправить');
+				I.see('Taras', '#name');
+				I.see('550', '#sum');
+				I.see('5%', '#rate');
+		});
+		session('rate7%', () => {
+			I.amOnPage('/');
+				I.fillField('#nameadd', 'Taras');
+				I.fillField('#sumadd', '5500');
+				I.click('Отправить');
+				I.see('Taras', '#name');
+				I.see('5500', '#sum');
+				I.see('7%', '#rate');
+		});
 });
